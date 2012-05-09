@@ -2,19 +2,18 @@
 
 import urllib2
 import re
+import json
+from pprint import pprint
 
-pair = {}
-pair['url'] = "http://slashdot.org"
-pair['pcre'] = [r"Anonymous Coward", r"Cowboy [a-zA-Z0-9]+", r"Geeknet"]
+#load urls.json for monitoring
+json_data=open("urls.json").read()
+data = json.loads(json_data)
 
-url_pairs = []
-url_pairs.append(pair)
-
-for pair in url_pairs:
+for item in data:
     bOffending = False
     print "\n"
-    url = pair['url']
-    pcre = pair['pcre']
+    url = item['url']
+    pcre = item['pcre']
     print "Checking %s" % url
     
     req = urllib2.Request(url)

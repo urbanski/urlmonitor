@@ -1,0 +1,4 @@
+[
+{"url":"http://slashdot.org", "pcre":["Anonymous Coward", "Cowboy [a-zA-Z0-9]+", "Geeknet"]},
+{"url":"http://ebay.com", "pcre":["electronics"]}
+]
